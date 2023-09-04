@@ -241,8 +241,60 @@ if (mes < 1 || mes > 12) { // Valida que el numero de mes sea correcto
 
 void lectorhmin (){
 
+int hora, duracion, horas, minutos;
+char Salida;
+
+do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
+
+
+   cout << "Ingrese la hora en formato de reloj de 24 horas (por ejemplo, 1245): ";
+   cin >> hora;
+
+    if (hora < 0 || hora >= 2400 || hora % 100 >= 60) {
+            cout << hora << " es un tiempo invalido." << endl;
+    }
+
+    cout << "Ingrese la duracion en formato de reloj de 24 horas (por ejemplo, 345): ";
+            cin >> duracion;
+
+    if (duracion < 0 || duracion >= 2400 || duracion % 100 >= 60) {
+            cout << duracion << " es un tiempo invalido." << endl;
+    }
+
+    horas = (hora + duracion) / 100;
+    minutos = (hora + duracion) % 100;
+
+    if (minutos >= 60) {
+            horas += minutos / 60;
+            minutos %= 60;
+    }
+
+    if (horas >= 24) {
+            horas %= 24;
+    }
+
+    cout << "La hora es ";
+    if (horas < 10) {
+            cout << "0";
+    }
+    cout << horas;
+    if (minutos < 10) {
+            cout << "0";
+    }
+    cout << minutos << "." << endl;
+
+    // Preguntar al usuario si desea salir o continuar
+    cout << endl;
+    cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+    cin >> Salida;
+
+} while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
 
 }
+
+
+
+
 /*Definir la funcion
 
 void NumeroPalindromo (){
