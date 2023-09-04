@@ -1,6 +1,17 @@
+//////// Laboratorio #1 implementado por Jorge Alarcon Arenas. CC 1059701029 ---- UdeA/2023 //////////
+
 #include <iostream>
 
 using namespace std;
+
+/*para crear funciones
+void idcaracter();
+*/
+
+void idcaracter();
+void contdin ();
+void lectormd();
+void lectorhmin ();
 
 int main() {
     int Menu;
@@ -9,6 +20,7 @@ int main() {
          // Mostrar el menú
              cout << endl;
              cout << "Buenas tardes, seleccione una opcion del Menu:" << endl;
+             cout << endl;
              cout << "1. Identificador de Caracteres" << endl;
              cout << "2. Contador de monedas y billetes" << endl;
              cout << "3. Lector de Mes/Dia" << endl;
@@ -27,315 +39,63 @@ int main() {
              cout << "16. Serie Collatz" << endl;
              cout << "17. Numero Triangular" << endl;
              cout << "0. Salir" << endl;
+             cout << endl;
              cout << "Elije una opcion: ";
              cin >> Menu;
 
     // Procesar la opción seleccionada
     switch (Menu) {
     case 1:
-        cout << "1. Identificador de Caracteres: " << endl;
-        char Caracter,Salida;
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-        cout << "Ingrese un caracter: " << endl;
-        cin >> Caracter;
-        Caracter = tolower(Caracter); // Utilzamos esta linea para convertir en miniscula el ingreso del usuario.
-        // Verificar si el carácter es una letra
-        // Verificar si el carácter es una letra
-        if ((Caracter >= 'a' && Caracter <= 'z')) {
-            // Comprobar si es una vocal
-            if (Caracter == 'a' || Caracter == 'e' || Caracter == 'i' || Caracter == 'o' || Caracter == 'u') {
-                cout << Caracter << " es una vocal." << endl;
-            } else {
-                cout << Caracter << " es una consonante." << endl;
-            }
-        } else {
-            cout << Caracter << " no es una letra." << endl;
-        }
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
-            break;
+        idcaracter();
+        break;
     case 2:
-        cout << "2. Contador de monedas y billetes: " << endl;
-        int cantidad;
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-        int billetes[] = {50000, 20000, 10000, 5000, 2000, 1000};
-        int monedas[] = {500, 200, 100, 50};
-
-        // Solicitar al usuario ingresar la cantidad deseada
-        cout << "Ingrese la cantidad deseada: ";
-        cin >> cantidad;
-
-        int faltante = cantidad;
-
-        cout << "Billetes y monedas necesarios para completar " << cantidad << ":" << endl;
-
-        for (int i = 0; i < 6; i++) {
-            int cantidadActual = faltante / billetes[i];
-            if (cantidadActual > 0) {
-                cout << billetes[i] << " : " << cantidadActual << endl;
-                faltante %= billetes[i];
-            }
-        }
-
-        for (int i = 0; i < 4; i++) {
-            int cantidadActual = faltante / monedas[i];
-            if (cantidadActual > 0) {
-                cout << monedas[i] << " : " << cantidadActual << endl;
-                faltante %= monedas[i];
-            }
-        }
-
-        if (faltante > 0) {
-            cout << "Faltante: " << faltante << endl;
-        } else {
-            cout << "La cantidad se ha completado." << endl;
-        }
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        contdin();
         break;
-
     case 3:
-        cout << "3. Lector de Mes/Dia" << endl;
-
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        lectormd();
         break;
-
     case 4:
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        lectorhmin();
         break;
-
-
     case 5:
-
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        idcaracter();
         break;
-
     case 6:
-
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        idcaracter();
         break;
-
     case 7:
-
-
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        idcaracter();
         break;
-
     case 8:
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        idcaracter();
         break;
-
-
     case 9:
-
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        idcaracter();
         break;
-
     case 10:
-
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        idcaracter();
         break;
-
     case 11:
-
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        idcaracter();
         break;
-
     case 12:
-
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        idcaracter();
         break;
-
     case 13:
-
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        idcaracter();
         break;
-
     case 14:
-
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        idcaracter();
         break;
-
     case 15:
-
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        idcaracter();
         break;
-
     case 16:
-
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        idcaracter();
         break;
-
     case 17:
-
-
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
-
-
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
-
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
+        idcaracter();
         break;
-
     case 0:
         cout << endl;
         cout << "Saliendo del programa." << endl;
@@ -350,3 +110,117 @@ int main() {
     return 0;
 
 }
+
+
+void idcaracter() {
+
+    cout << "1. Identificador de Caracteres: " << endl;
+char Caracter,Salida;
+
+do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
+    cout << endl;
+    cout << "Ingrese un caracter: " << endl;
+    cin >> Caracter;
+    Caracter = tolower(Caracter); // Utilzamos esta linea para convertir en miniscula el ingreso del usuario.
+
+    // Verificar si el carácter es una letra
+    if ((Caracter >= 'a' && Caracter <= 'z')) {
+    // Comprobar si es una vocal
+    if (Caracter == 'a' || Caracter == 'e' || Caracter == 'i' || Caracter == 'o' || Caracter == 'u') {
+            cout << Caracter << " es una vocal." << endl;
+    } else {
+            cout << Caracter << " es una consonante." << endl;
+    }
+    } else {
+    cout << Caracter << " no es una letra." << endl;
+    }
+
+    // Preguntar al usuario si desea salir o continuar
+    cout << endl;
+    cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+    cin >> Salida;
+
+} while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
+
+}
+
+void contdin (){
+cout << "2. Contador de monedas y billetes: " << endl;
+int cantidad;
+char Salida;
+
+do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
+
+    int billetes[] = {50000, 20000, 10000, 5000, 2000, 1000};
+    int monedas[] = {500, 200, 100, 50};
+
+    // Solicitar al usuario ingresar la cantidad deseada
+    cout << "Ingrese valor a contar (SOLO NUMEROS): ";
+    cin >> cantidad;
+
+    int faltante = cantidad;
+
+    cout << "Billetes y monedas necesarios para completar " << cantidad << ":" << endl;
+
+    for (int i = 0; i < 6; i++) {
+    int cantidadActual = faltante / billetes[i];
+    if (cantidadActual > 0) {
+            cout << billetes[i] << " : " << cantidadActual << endl;
+            faltante %= billetes[i];
+    }
+    }
+
+    for (int i = 0; i < 4; i++) {
+    int cantidadActual = faltante / monedas[i];
+    if (cantidadActual > 0) {
+            cout << monedas[i] << " : " << cantidadActual << endl;
+            faltante %= monedas[i];
+    }
+    }
+
+    if (faltante > 0) {
+    cout << "Faltante: " << faltante << endl;
+    } else {
+    cout << "La cantidad se ha completado." << endl;
+    }
+    break;
+
+    // Preguntar al usuario si desea salir o continuar
+    cout << endl;
+    cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+    cin >> Salida;
+
+} while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
+
+}
+
+void lectormd(){
+
+
+}
+
+void lectorhmin (){
+
+
+}
+/*Definir la funcion
+
+void NumeroPalindromo (){
+CODIGO DE LA FUNCION
+
+}
+*/
+
+/*Menu Salida
+        char Salida;
+        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
+
+
+        // Preguntar al usuario si desea salir o continuar
+        cout << endl;
+        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+        cin >> Salida;
+
+        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
+
+*/
