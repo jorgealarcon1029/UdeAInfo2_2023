@@ -4,14 +4,11 @@
 
 using namespace std;
 
-/*para crear funciones
-void idcaracter();
-*/
-
 void idcaracter();
 void contdin ();
 void lectormd();
 void lectorhmin ();
+void rombo();
 
 int main() {
     int Menu;
@@ -58,7 +55,7 @@ int main() {
         lectorhmin();
         break;
     case 5:
-        idcaracter();
+        rombo();
         break;
     case 6:
         idcaracter();
@@ -292,27 +289,76 @@ do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
 
 }
 
+void rombo(){
+
+int rombito;
+char Salida;
+do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
 
 
+cout << "Ingrese un numero entero impar para el tamano del rombo: ";
+cin >> rombito;
 
-/*Definir la funcion
+if (rombito % 2 == 0 || rombito < 1) { // Validar que sea un numero impar positivo
+    cout << "El numero ingresado no es valido. Debe ser un numero entero impar positivo." << endl;
+}
 
-void NumeroPalindromo (){
-CODIGO DE LA FUNCION
+// Imprimir la parte superior del rombo
+for (int i = 1; i <= rombito; i += 2) {
+    // Imprimir espacios en blanco antes de los asteriscos
+    for (int j = 0; j < (rombito - i) / 2; j++) {
+            if (rombito % 2 == 0 || rombito < 1) {
+            } else {
+                    cout << " ";
+
+        }
+    }
+    // Imprimir asteriscos
+    for (int j = 0; j < i; j++) {
+            if (rombito % 2 == 0 || rombito < 1) {
+            } else {
+                        cout << "*";
+            }
+
+    }
+    if (rombito % 2 == 0 || rombito < 1) {
+    } else {
+            cout << endl;
+    }
+}
+
+// Imprimir la parte inferior del rombo
+for (int i = rombito - 2; i >= 1; i -= 2) {
+    // Imprimir espacios en blanco antes de los asteriscos
+    for (int j = 0; j < (rombito - i) / 2; j++) {
+            if (rombito % 2 == 0 || rombito < 1) {
+            } else {
+                        cout << " ";
+
+            }
+    }
+    // Imprimir asteriscos
+    for (int j = 0; j < i; j++) {
+            if (rombito % 2 == 0 || rombito < 1) {
+            } else {
+                        cout << "*";
+            }
+    }
+    if (rombito % 2 == 0 || rombito < 1) {
+    } else {
+            cout << endl;
+    }
+}
+
+// Preguntar al usuario si desea salir o continuar
+cout << endl;
+cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+cin >> Salida;
+
+} while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
+
 
 }
-*/
-
-/*Menu Salida
-        char Salida;
-        do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
 
 
-        // Preguntar al usuario si desea salir o continuar
-        cout << endl;
-        cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
-        cin >> Salida;
 
-        } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
-
-*/
