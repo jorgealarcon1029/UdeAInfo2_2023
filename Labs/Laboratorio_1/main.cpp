@@ -7,7 +7,7 @@ int main() {
 
     do {
          // Mostrar el menú
-            cout << "" << endl;
+             cout << endl;
              cout << "Buenas tardes, seleccione una opcion del Menu:" << endl;
              cout << "1. Identificador de Caracteres" << endl;
              cout << "2. Contador de monedas y billetes" << endl;
@@ -54,6 +54,7 @@ int main() {
         }
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -62,12 +63,45 @@ int main() {
             break;
     case 2:
         cout << "2. Contador de monedas y billetes: " << endl;
-
+        int cantidad;
 
         do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
 
+        int billetes[] = {50000, 20000, 10000, 5000, 2000, 1000};
+        int monedas[] = {500, 200, 100, 50};
+
+        // Solicitar al usuario ingresar la cantidad deseada
+        cout << "Ingrese la cantidad deseada: ";
+        cin >> cantidad;
+
+        int faltante = cantidad;
+
+        cout << "Billetes y monedas necesarios para completar " << cantidad << ":" << endl;
+
+        for (int i = 0; i < 6; i++) {
+            int cantidadActual = faltante / billetes[i];
+            if (cantidadActual > 0) {
+                cout << billetes[i] << " : " << cantidadActual << endl;
+                faltante %= billetes[i];
+            }
+        }
+
+        for (int i = 0; i < 4; i++) {
+            int cantidadActual = faltante / monedas[i];
+            if (cantidadActual > 0) {
+                cout << monedas[i] << " : " << cantidadActual << endl;
+                faltante %= monedas[i];
+            }
+        }
+
+        if (faltante > 0) {
+            cout << "Faltante: " << faltante << endl;
+        } else {
+            cout << "La cantidad se ha completado." << endl;
+        }
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -83,6 +117,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -96,6 +131,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -111,6 +147,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -125,6 +162,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -140,6 +178,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -153,6 +192,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -168,6 +208,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -182,6 +223,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -196,6 +238,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -210,6 +253,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -224,6 +268,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -238,6 +283,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -252,6 +298,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -266,6 +313,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -280,6 +328,7 @@ int main() {
 
 
         // Preguntar al usuario si desea salir o continuar
+        cout << endl;
         cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
         cin >> Salida;
 
@@ -288,9 +337,11 @@ int main() {
         break;
 
     case 0:
+        cout << endl;
         cout << "Saliendo del programa." << endl;
         break;
     default:
+        cout << endl;
         cout << "Opción no valida. Por favor, elige una de las opciones del Menu." << endl;
             break;
     }
