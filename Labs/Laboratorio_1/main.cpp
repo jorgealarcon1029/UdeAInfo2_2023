@@ -121,12 +121,14 @@ do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
     cout << endl;
     cout << "Ingrese un caracter: " << endl;
     cin >> Caracter;
-    Caracter = tolower(Caracter); // Utilzamos esta linea para convertir en miniscula el ingreso del usuario.
+    if(Caracter>=97){
+            Caracter-=32;
+    }
 
     // Verificar si el carácter es una letra
-    if ((Caracter >= 'a' && Caracter <= 'z')) {
+    if ((Caracter >= 'A' && Caracter <= 'Z')) {
     // Comprobar si es una vocal
-    if (Caracter == 'a' || Caracter == 'e' || Caracter == 'i' || Caracter == 'o' || Caracter == 'u') {
+    if (Caracter == 'A' || Caracter == 'E' || Caracter == 'I' || Caracter == 'O' || Caracter == 'U') {
             cout << Caracter << " es una vocal." << endl;
     } else {
             cout << Caracter << " es una consonante." << endl;
@@ -196,6 +198,44 @@ do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
 
 void lectormd(){
 
+int mes, dia;
+char resultado = '\0';
+char Salida;
+do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
+
+cout << endl;
+cout << "Ingrese el mes (1-12): ";
+        cin >> mes;
+cout << "Ingrese el dia: ";
+        cin >> dia;
+
+if (mes < 1 || mes > 12) { // Valida que el numero de mes sea correcto
+    cout << resultado << mes << " es una fecha invalida." << endl;
+    }else {
+        if (dia < 1 || dia > 31) { // Valida que el numero de dia sea correcto
+    cout << resultado << dia << "/" << mes << " es una fecha invalida." << endl;
+            }else {
+                if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) { // Valida los meses que no exceden los 30 dias
+                    cout << resultado << dia << "/" << mes << " es una fecha invalida." << endl;
+                }else {
+                        if (mes == 2 && dia == 29) {
+                        cout << resultado << dia << "/" << mes <<" es valida en bisiesto." << endl;
+                        }else {
+                                if (mes == 2 && dia > 29) {
+                                cout << resultado << dia << "/" << mes <<" es una fecha invalida." << endl;
+                        }else {
+                        cout << dia << "/" << mes <<" es una fecha valida." << endl;
+                            }
+                        }
+                    }
+            }
+        }
+    // Preguntar al usuario si desea salir o continuar
+    cout << endl;
+    cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+    cin >> Salida;
+
+} while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
 
 }
 
