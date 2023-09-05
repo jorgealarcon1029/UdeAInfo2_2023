@@ -9,6 +9,9 @@ void contdin ();
 void lectormd();
 void lectorhmin ();
 void rombo();
+void euler();
+void Fibonacci();
+void Mulmenor();
 
 int main() {
     int Menu;
@@ -58,13 +61,13 @@ int main() {
         rombo();
         break;
     case 6:
-        idcaracter();
+        euler();
         break;
     case 7:
-        idcaracter();
+        Fibonacci();
         break;
     case 8:
-        idcaracter();
+        Mulmenor();;
         break;
     case 9:
         idcaracter();
@@ -360,5 +363,93 @@ cin >> Salida;
 
 }
 
+void euler(){
+
+int num;
+double euler = 1.0;
+char Salida;
+do {
+
+cout << "Ingrese el numero de elementos para la aproximacion de e: ";
+cin >> num;
+
+if (num < 0) {
+cout << "El numero de elementos debe ser no negativo." << endl;
+
+}
+
+double factorial = 1.0;
+
+for (int i = 1; i <= num; ++i) {
+factorial *= i;
+euler += 1.0 / factorial;
+}
+
+cout.precision(1);  // Establecer la precisión para mostrar más decimales
+cout << "e es aproximadamente: " << fixed << euler << endl;
+
+// Preguntar al usuario si desea salir o continuar
+cout << endl;
+cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+cin >> Salida;
+
+} while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
+
+}
+
+void Fibonacci(){
+
+int numF;
+char Salida;
+
+do {
+
+cout << "Ingrese un numero para iniciar la suma Fibonacci: ";
+cin >> numF;
+
+int a = 1;  // Primer número de Fibonacci
+int b = 1;  // Segundo número de Fibonacci
+int suma_pares = 0;
+
+cout << endl;
+cout << "Los numeros de la suma son: " << endl;
+while (a <= numF) {
+cout << a << " "; //imprime la serie Fibonacci
+if (a % 2 == 0) {
+            suma_pares += a;
+}
+int temp = a + b; //La magia del Fibonacci está aqui.
+a = b;
+b = temp;
+}
+
+cout << endl;
+cout << "El resultado de la suma de pares es: " << suma_pares << endl;
 
 
+// Preguntar al usuario si desea salir o continuar
+cout << endl;
+cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+cin >> Salida;
+
+} while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
+
+}
+
+void Mulmenor(){
+
+char Salida;
+do {
+
+
+
+
+
+// Preguntar al usuario si desea salir o continuar
+cout << endl;
+cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+cin >> Salida;
+
+} while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
+
+}
