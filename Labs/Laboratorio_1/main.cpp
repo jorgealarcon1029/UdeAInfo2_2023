@@ -208,6 +208,9 @@ do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
 
 void lectormd(){
 
+cout << endl;
+cout << "3. Lector de Mes/Dia" << endl;
+
 int mes, dia;
 char resultado = '\0';
 char Salida;
@@ -250,6 +253,9 @@ if (mes < 1 || mes > 12) { // Valida que el numero de mes sea correcto
 }
 
 void lectorhmin (){
+
+cout << endl;
+cout << "4. Lector de Hora/Mins" << endl;
 
 int hora, duracion, horas, minutos;
 char Salida;
@@ -303,6 +309,9 @@ do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
 }
 
 void rombo(){
+
+cout << endl;
+cout << "5. Imprimir Rombo con impar" << endl;
 
 int rombito;
 char Salida;
@@ -376,6 +385,9 @@ cin >> Salida;
 //revisar euler se suma infinitamente
 void euler(){
 
+cout << endl;
+cout << "6. Valor de Euler" << endl;
+
 int num;
 double euler = 1.0;
 char Salida;
@@ -399,7 +411,6 @@ euler += 1.0 / factorial;
 
 cout.precision(1);  // Establecer la precisión para mostrar más decimales
 cout << "e es aproximadamente: " << fixed << euler << endl;
-cout << euler << 1.0;
 
 // Preguntar al usuario si desea salir o continuar
 cout << endl;
@@ -411,6 +422,9 @@ cin >> Salida;
 }
 
 void Fibonacci(){
+
+cout << endl;
+cout << "7. Suma Fibonacci" << endl;
 
 int numF;
 char Salida;
@@ -452,6 +466,9 @@ cin >> Salida;
 
 // No logro imprimir la posicion m11, m12, ETC
 void Mulmenor(){
+
+cout << endl;
+cout << "8. Sumar A,B,C multiplos menores a C" << endl;
 
 int a, b, c;
 int suma = 0;
@@ -500,6 +517,9 @@ cin >> Salida;
 
 // Comprender el ejercicio
 void NalaN(){
+
+cout << endl;
+cout << "9. Suma de N a la N" << endl;
 
 char Salida;
 int n;
@@ -559,11 +579,14 @@ return true;
 
 void Nesimo(){
 
+cout << endl;
+cout << "10. Enesimo numero primo" << endl;
+
 int n;
 int contadorPrimos = 0;
 int numero = 2;
 char Salida;
-esPrimo(numero);
+
 
 do {
 
@@ -581,6 +604,7 @@ if (esPrimo(numero)) {
             contadorPrimos++;
 }
 numero++;
+esPrimo(numero);
 }
 
 cout << "El primo numero " << n << " es: " << numero - 1 << endl;
