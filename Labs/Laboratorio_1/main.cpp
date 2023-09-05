@@ -12,6 +12,10 @@ void rombo();
 void euler();
 void Fibonacci();
 void Mulmenor();
+void NalaN();
+void Nesimo();
+
+/////////////// MAIN ///////////////////////
 
 int main() {
     int Menu;
@@ -70,10 +74,10 @@ int main() {
         Mulmenor();;
         break;
     case 9:
-        idcaracter();
+        NalaN();
         break;
     case 10:
-        idcaracter();
+        Nesimo();
         break;
     case 11:
         idcaracter();
@@ -111,6 +115,8 @@ int main() {
 
 }
 
+/////////////////////// FUNCIONES ///////////////////////
+
 
 void idcaracter() {
 
@@ -146,7 +152,10 @@ do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
 
 }
 
+//revisar el uso de caracteres no permitido
 void contdin (){
+
+cout << endl;
 cout << "2. Contador de monedas y billetes: " << endl;
 int cantidad;
 char Salida;
@@ -157,6 +166,7 @@ do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
     int monedas[] = {500, 200, 100, 50};
 
     // Solicitar al usuario ingresar la cantidad deseada
+    cout << endl;
     cout << "Ingrese valor a contar (SOLO NUMEROS): ";
     cin >> cantidad;
 
@@ -185,7 +195,7 @@ do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
     } else {
     cout << "La cantidad se ha completado." << endl;
     }
-    break;
+    //break;
 
     // Preguntar al usuario si desea salir o continuar
     cout << endl;
@@ -246,7 +256,7 @@ char Salida;
 
 do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
 
-
+   cout << endl;
    cout << "Ingrese la hora en formato de reloj de 24 horas (por ejemplo, 1245): ";
    cin >> hora;
 
@@ -298,7 +308,7 @@ int rombito;
 char Salida;
 do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
 
-
+cout << endl;
 cout << "Ingrese un numero entero impar para el tamano del rombo: ";
 cin >> rombito;
 
@@ -363,6 +373,7 @@ cin >> Salida;
 
 }
 
+//revisar euler se suma infinitamente
 void euler(){
 
 int num;
@@ -370,6 +381,7 @@ double euler = 1.0;
 char Salida;
 do {
 
+cout << endl;
 cout << "Ingrese el numero de elementos para la aproximacion de e: ";
 cin >> num;
 
@@ -387,6 +399,7 @@ euler += 1.0 / factorial;
 
 cout.precision(1);  // Establecer la precisión para mostrar más decimales
 cout << "e es aproximadamente: " << fixed << euler << endl;
+cout << euler << 1.0;
 
 // Preguntar al usuario si desea salir o continuar
 cout << endl;
@@ -404,6 +417,7 @@ char Salida;
 
 do {
 
+cout << endl;
 cout << "Ingrese un numero para iniciar la suma Fibonacci: ";
 cin >> numF;
 
@@ -436,13 +450,43 @@ cin >> Salida;
 
 }
 
+// No logro imprimir la posicion m11, m12, ETC
 void Mulmenor(){
 
+int a, b, c;
+int suma = 0;
+int posicion = 0;
+
 char Salida;
+
 do {
 
+cout << endl;
+cout << "Ingrese el valor de a: ";
+cin >> a;
+
+cout << "Ingrese el valor de b: ";
+cin >> b;
+
+cout << "Ingrese el valor de c: ";
+cin >> c;
+
+for (int i = 1; i < c; ++i) {
+cout << "m" << i << posicion <<" + ";
+if (i % a == 0 || i % b == 0) {
+            suma += i;
+
+}
+}
 
 
+// Imprimir la suma en el formato requerido
+if (suma > 0) {
+// Eliminar el último " + " y agregar el resultado
+cout << "= " << suma << endl;
+} else {
+cout << "No hay múltiplos de " << a << " ni " << b << " menores que " << c << "." << endl;
+}
 
 
 // Preguntar al usuario si desea salir o continuar
@@ -453,3 +497,103 @@ cin >> Salida;
 } while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
 
 }
+
+// Comprender el ejercicio
+void NalaN(){
+
+char Salida;
+int n;
+int suma = 0;
+
+do {
+
+cout << endl;
+cout << "Ingrese un numero entero N: ";
+        cin >> n;
+
+// Asegurarse de que el número sea positivo
+if (n < 0) {
+cout << "Por favor, ingrese un numero entero positivo." << endl;
+
+}
+
+int numero_original = n; // Guardar el número original para mostrar al final
+
+while (n > 0) {
+int digito = n % 10; // Obtener el último dígito
+int resultado = 1;
+
+// Elevar el dígito a sí mismo
+for (int i = 0; i < digito; ++i) {
+            resultado *= digito;
+}
+
+suma += resultado;
+n /= 10; // Eliminar el último dígito
+}
+
+cout << "El resultado de la suma es: " << suma << " para el numero " << numero_original << "." << endl;
+
+
+// Preguntar al usuario si desea salir o continuar
+cout << endl;
+cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+cin >> Salida;
+
+} while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
+
+}
+
+// funcion para evaluar el numero primo
+bool esPrimo(int num) {
+if (num <= 1) {
+return false;
+}
+for (int i = 2; i * i <= num; ++i) {
+if (num % i == 0) {
+return false;
+}
+}
+return true;
+}
+
+void Nesimo(){
+
+int n;
+int contadorPrimos = 0;
+int numero = 2;
+char Salida;
+esPrimo(numero);
+
+do {
+
+cout << endl;
+cout << "Ingrese el valor de n para encontrar el enesimo numero primo: ";
+cin >> n;
+
+if (n <= 0) {
+cout << "Por favor, ingrese un valor positivo para n." << endl;
+
+}
+
+while (contadorPrimos < n) {
+if (esPrimo(numero)) {
+            contadorPrimos++;
+}
+numero++;
+}
+
+cout << "El primo numero " << n << " es: " << numero - 1 << endl;
+
+
+// Preguntar al usuario si desea salir o continuar
+cout << endl;
+cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+cin >> Salida;
+
+} while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
+
+}
+
+
+
