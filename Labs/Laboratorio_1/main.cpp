@@ -14,6 +14,10 @@ void Fibonacci();
 void Mulmenor();
 void NalaN();
 void Nesimo();
+void MultiploN();
+void MaxFac();
+void SumPrim();
+void Palindromo();
 
 /////////////// MAIN ///////////////////////
 
@@ -80,16 +84,16 @@ int main() {
         Nesimo();
         break;
     case 11:
-        idcaracter();
+        MultiploN();
         break;
     case 12:
-        idcaracter();
+        MaxFac();
         break;
     case 13:
-        idcaracter();
+        SumPrim();
         break;
     case 14:
-        idcaracter();
+        Palindromo();
         break;
     case 15:
         idcaracter();
@@ -115,8 +119,37 @@ int main() {
 
 }
 
-/////////////////////// FUNCIONES ///////////////////////
+//////////////////FUNCIONES ADICIONALES /////////////////////
 
+// funcion para evaluar el numero primo para la funcion Nesimo, SumPrim, MaxFac
+bool esPrimo(int num) {
+    if (num <= 1) {
+    return false;
+    }
+    for (int i = 2; i * i <= num; ++i) {
+    if (num % i == 0) {
+            return false;
+    }
+    }
+    return true;
+}
+
+// Función para calcular el máximo común divisor (MCD) para la funcion MultiploN
+int calcularMCD(int a, int b) {
+    while (b != 0) {
+    int temp = b;
+    b = a % b;
+    a = temp;
+    }
+    return a;
+}
+
+// Función para calcular el mínimo común múltiplo (MCM) para la funcion MultiploN
+int calcularMCM(int a, int b) {
+    return (a * b) / calcularMCD(a, b);
+}
+
+/////////////////////// FUNCIONES PRINCIPALES ///////////////////////
 
 void idcaracter() {
 
@@ -159,6 +192,7 @@ cout << endl;
 cout << "2. Contador de monedas y billetes: " << endl;
 int cantidad;
 char Salida;
+
 
 do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
 
@@ -382,7 +416,7 @@ cin >> Salida;
 
 }
 
-//revisar euler se suma infinitamente
+//revisar euler se suma infinitamente // no coincide el resultado
 void euler(){
 
 cout << endl;
@@ -409,8 +443,9 @@ factorial *= i;
 euler += 1.0 / factorial;
 }
 
-cout.precision(1);  // Establecer la precisión para mostrar más decimales
+cout.precision(4);  // Establecer la precisión para mostrar más decimales
 cout << "e es aproximadamente: " << fixed << euler << endl;
+euler = 0;
 
 // Preguntar al usuario si desea salir o continuar
 cout << endl;
@@ -431,25 +466,25 @@ char Salida;
 
 do {
 
-cout << endl;
-cout << "Ingrese un numero para iniciar la suma Fibonacci: ";
-cin >> numF;
+    cout << endl;
+    cout << "Ingrese un numero para iniciar la suma Fibonacci: ";
+    cin >> numF;
 
-int a = 1;  // Primer número de Fibonacci
-int b = 1;  // Segundo número de Fibonacci
-int suma_pares = 0;
+    int a = 1;  // Primer número de Fibonacci
+    int b = 1;  // Segundo número de Fibonacci
+    int suma_pares = 0;
 
-cout << endl;
-cout << "Los numeros de la suma son: " << endl;
-while (a <= numF) {
-cout << a << " "; //imprime la serie Fibonacci
-if (a % 2 == 0) {
+    cout << endl;
+    cout << "Los numeros de la suma son: " << endl;
+        while (a <= numF) {
+        cout << a << " "; //imprime la serie Fibonacci
+            if (a % 2 == 0) {
             suma_pares += a;
-}
-int temp = a + b; //La magia del Fibonacci está aqui.
-a = b;
-b = temp;
-}
+            }
+            int temp = a + b; //La magia del Fibonacci está aqui.
+            a = b;
+            b = temp;
+    }
 
 cout << endl;
 cout << "El resultado de la suma de pares es: " << suma_pares << endl;
@@ -564,19 +599,6 @@ cin >> Salida;
 
 }
 
-// funcion para evaluar el numero primo
-bool esPrimo(int num) {
-if (num <= 1) {
-return false;
-}
-for (int i = 2; i * i <= num; ++i) {
-if (num % i == 0) {
-return false;
-}
-}
-return true;
-}
-
 void Nesimo(){
 
 cout << endl;
@@ -620,4 +642,115 @@ cin >> Salida;
 }
 
 
+void MultiploN(){
 
+cout << endl;
+cout << "11. Minimo comun multiplo entre 1 y N" << endl;
+
+int n;
+int mcm = 1;
+char Salida;
+do {
+
+cout << endl;
+cout << "Ingrese un numero entero: ";
+        cin >> n;
+
+if (n < 1) {
+cout << "Por favor, ingrese un numero entero positivo." << endl;
+}
+
+for (int i = 2; i <= n; ++i) {
+mcm = calcularMCM(mcm, i);
+}
+
+cout << "El minimo comun multiplo es: " << mcm << endl;
+
+            // Preguntar al usuario si desea salir o continuar
+            cout << endl;
+cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+cin >> Salida;
+
+} while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
+
+}
+
+// el resultado del texto no muestra el valor inicial
+void MaxFac(){
+
+cout << endl;
+cout << "12. Maximo Factor Primo de un numero" << endl;
+
+int num;
+int mayorFactorPrimo = 1;
+
+char Salida;
+do {
+
+cout << endl;
+cout << "Ingrese un numero entero: ";
+cin >> num;
+
+
+if (num < 2) {
+cout << "Por favor, ingrese un numero entero mayor o igual a 2." << endl;
+
+}
+
+for (int i = 2; i <= num; ++i) {
+while (num % i == 0 && esPrimo(i)) {
+mayorFactorPrimo = i;
+num /= i;
+}
+}
+
+cout << "El mayor factor primo de " << num << " es: " << mayorFactorPrimo << endl;
+
+// Preguntar al usuario si desea salir o continuar
+cout << endl;
+cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+cin >> Salida;
+
+} while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
+
+}
+
+void SumPrim(){
+
+cout << endl;
+cout << "13. Suma de numeros primos menores a N" << endl;
+
+int n;
+int suma = 0;
+char Salida;
+do {
+
+cout << endl;
+cout << "Ingrese un numero entero: ";
+        cin >> n;
+
+if (n < 2) {
+cout << "Por favor, ingrese un numero entero mayor o igual a 2." << endl;
+}
+
+for (int i = 2; i < n; ++i) {
+if (esPrimo(i)) {
+suma += i;
+}
+}
+
+cout << "El resultado de la suma es: " << suma << endl;
+suma = 0;
+
+// Preguntar al usuario si desea salir o continuar
+cout << endl;
+cout << "Presiona 'S' para salir o cualquier otra tecla para continuar: ";
+cin >> Salida;
+
+} while (Salida != 'S' && Salida!= 's'); // CONDICION DE SALIDA DEL CASO, PARA RETORNAR AL MENU PRINCIPAL.
+
+}
+
+void Palindromo(){
+
+}
