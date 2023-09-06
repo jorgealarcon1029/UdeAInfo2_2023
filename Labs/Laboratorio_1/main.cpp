@@ -185,7 +185,6 @@ do { // ESTRUCTURA PARA QUE LA INSTRUCCION SE EJECUTE HASTA QUE SE DESEE SALIR
 
 }
 
-//revisar el uso de caracteres no permitido
 void contdin (){
 
 cout << endl;
@@ -416,7 +415,6 @@ cin >> Salida;
 
 }
 
-//revisar euler se suma infinitamente // no coincide el resultado
 void euler(){
 
 cout << endl;
@@ -499,7 +497,6 @@ cin >> Salida;
 
 }
 
-// No logro imprimir la posicion m11, m12, ETC
 void Mulmenor(){
 
 cout << endl;
@@ -550,7 +547,6 @@ cin >> Salida;
 
 }
 
-// Comprender el ejercicio
 void NalaN(){
 
 cout << endl;
@@ -641,7 +637,6 @@ cin >> Salida;
 
 }
 
-
 void MultiploN(){
 
 cout << endl;
@@ -675,7 +670,6 @@ cin >> Salida;
 
 }
 
-// el resultado del texto no muestra el valor inicial
 void MaxFac(){
 
 cout << endl;
